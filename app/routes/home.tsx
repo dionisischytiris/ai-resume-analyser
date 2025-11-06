@@ -72,6 +72,12 @@ export default function Home() {
                     </Link>
                 </div>
             )}
+
+            <div className="flex flex-col items-center justify-center mt-10 mb-10 gap-4">
+                <Link to="/wipe" className="primary-button w-fit text-xl font-semibold">
+                    Wipe Data
+                </Link>
+            </div>
         </section>
     </main>
 }
