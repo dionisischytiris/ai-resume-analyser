@@ -1,0 +1,115 @@
+@layer components {
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];
+        background-size: 200% 200%;
+        background-position: 0% 50%;
+        transition: background-position 0.5s ease;
+    }
+
+    .text-gradient:hover {
+        background-position: 100% 50%;
+    }
+
+    .gradient-border {
+        @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
+    }
+
+    .primary-button {
+        @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
+    }
+
+    .primary-button:hover {
+        @apply primary-gradient-hover
+    }
+
+    .resume-nav {
+        @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
+    }
+
+    .resume-summary {
+        @apply flex flex-row items-center justify-center p-4 gap-4;
+
+        .category {
+            @apply flex flex-row gap-2 items-center bg-gray-50 rounded-2xl p-4 w-full justify-between;
+        }
+    }
+
+    .back-button {
+        @apply flex flex-row items-center gap-2 border border-gray-200 rounded-lg p-2 shadow-sm;
+    }
+
+    .auth-button {
+        @apply primary-gradient rounded-full py-4 px-8 cursor-pointer w-[600px] max-md:w-full text-3xl font-semibold text-white;
+    }
+
+    .main-section {
+        @apply flex flex-col items-center gap-8 pt-12 mx-15 pb-5;
+    }
+
+
+    .page-heading {
+        /*@apply flex flex-col items-center gap-8 max-w-4xl text-center;*/
+        @apply flex flex-col items-center gap-8;
+        background: linear-gradient(
+                to right,
+                var(--page-heading-gradient-from),
+                var(--page-heading-gradient-via),
+                var(--page-heading-gradient-to)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        /*bg-clip-text text-transparent bg-gradient-to-r from-[#AB8C95] via-[#000000] to-[#8E97C5];*/
+        background-size: 200% 200%;
+        animation: page-heading 10s linear infinite;
+    }
+
+    .resumes-section {
+        @apply flex flex-wrap max-lg:flex-col gap-6 items-start  w-full max-w-[1850px] justify-evenly;
+    }
+
+    .resume-card {
+        @apply flex flex-col gap-8 h-[560px] w-full lg:w-[450px] xl:w-[490px] bg-[var(--resume-card)] rounded-2xl p-4;
+    }
+
+    .resume-card-header {
+        @apply flex flex-row gap-2 justify-between min-h-[110px] max-sm:flex-col items-center max-md:justify-center max-md:items-center ;
+    }
+
+    .feedback-section {
+        @apply flex flex-col gap-8 w-1/2 px-8 max-lg:w-full py-6;
+    }
+
+    .navbar {
+        @apply flex flex-row justify-between items-center bg-[var(--navbar-bg)] rounded-full p-4  sm:px-[5%] lg:px-[10%] w-[90%] sm:w-[90%] lg:w-[80%]
+        mx-auto;
+    }
+
+    .score-badge {
+        @apply flex flex-row items-center justify-center py-1 px-2 gap-4 rounded-[96px];
+    }
+
+    .form-div {
+        @apply flex flex-col gap-2 w-full items-start;
+    }
+
+    .uplader-drag-area {
+        @apply relative p-8 text-center transition-all duration-700 cursor-pointer bg-white rounded-2xl min-h-[208px];
+    }
+
+    .uploader-selected-file {
+        @apply flex items-center justify-between p-3 bg-gray-50 rounded-2xl;
+    }
+
+    .theme-toggle {
+        color: var(--text);
+        transition: color 0.2s ease;
+    }
+
+    .theme-toggle:hover {
+        color: var(--theme-bt);
+    }
+
+    :root[data-theme="dark"] .theme-toggle:hover {
+        color: var(--surface);
+    }
+}

@@ -46,6 +46,10 @@ interface PuterStore {
     isLoading: boolean;
     error: string | null;
     puterReady: boolean;
+    theme: 'light' | 'dark';
+    setTheme: (theme: 'light' | 'dark') => void;
+    toggleTheme: () => void;
+    initTheme: () => void;
     auth: {
         user: PuterUser | null;
         isAuthenticated: boolean;
@@ -411,7 +415,34 @@ export const usePuterStore = create<PuterStore>((set, get) => {
         return puter.kv.flush();
     };
 
+    const setTheme = (theme: 'light' | 'dark') => {
+        if (typeof document !== 'undefined') {
+            document.documentElement.setAttribute('data-theme', theme);
+        }
+        set({theme});
+    };
+
+    const toggleTheme = () => {
+        setTheme(get().theme === 'light' ? 'dark' : 'light');
+    };
+
+    const initTheme = () => {
+        if (typeof window === 'undefined') return; // skip SSR
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(prefersDark ? 'dark' : 'light');
+    };
+
+    // **Immediately detect system theme if running in browser**
+    if (typeof window !== 'undefined') {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(prefersDark ? 'dark' : 'light');
+    }
+
     return {
+        theme: 'light', // fallback
+        setTheme,
+        toggleTheme,
+        initTheme,
         isLoading: true,
         error: null,
         puterReady: false,

@@ -1,7 +1,8 @@
 import {isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration,} from "react-router";
 
 import type {Route} from "./+types/root";
-import "./app.css";
+// import "./app.css";
+import "../app/styles/main.css";
 import {usePuterStore} from "~/lib/puter";
 import {useEffect} from "react";
 

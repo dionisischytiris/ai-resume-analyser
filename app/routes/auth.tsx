@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
 import {usePuterStore} from "~/lib/puter";
+import {useEffect} from "react";
 import {useLocation, useNavigate} from "react-router";
 
 export const meta = () => ([
@@ -47,7 +47,7 @@ const Auth = () => {
                 </section>
             </div>
         </main>
-    );
-};
+    )
+}
 
-export default Auth;
+export default Auth

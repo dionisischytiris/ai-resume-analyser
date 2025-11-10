@@ -1,0 +1,56 @@
+@theme {
+    --font-sans: "Mona Sans", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --color-dark-200: #475467;
+
+    --color-light-blue-100: #c1d3f81a;
+    --color-light-blue-200: #a7bff14d;
+
+    --color-badge-green: #d5faf1;
+    --color-badge-red: #f9e3e2;
+    --color-badge-yellow: #fceed8;
+
+    --color-badge-green-text: #254d4a;
+    --color-badge-red-text: #752522;
+    --color-badge-yellow-text: #73321b;
+}
+
+/* Light */
+:root[data-theme="light"] {
+    --bg: #f0f0f0;
+    --surface: #f6f8fa;
+    --navbar-bg: #ffffff;
+    --page-heading-gradient-from: #0099ff;
+    --page-heading-gradient-via: #000000;
+    --page-heading-gradient-to: #66c2ff;
+    --theme-bt: #941BAC;
+    --resume-card: #ffffff;
+    --text: #24292f;
+    --text-muted: #6e7781;
+    --border: #d0d7de;
+    --link: #0969da;
+    --link-hover: #035fc7;
+    --success: #2da44e;
+    --danger: #cb2431;
+    --warning: #bf8700;
+}
+
+/* Dark */
+:root[data-theme="dark"] {
+    --bg: #161b22;
+    --surface: #161b22;
+    --navbar-bg: #656c76;
+    --page-heading-gradient-from: #A0B0C0;
+    --page-heading-gradient-via: #C0C0C0;
+    --page-heading-gradient-to: #FFFFFF;
+    --theme-bt: #161b22;
+    --resume-card: #2d343e;
+    --text: #c9d1d9;
+    --text-muted: #8b949e;
+    --border: #30363d;
+    --link: #58a6ff;
+    --link-hover: #1f6feb;
+    --success: #3fb950;
+    --danger: #f85149;
+    --warning: #d29922;
+}

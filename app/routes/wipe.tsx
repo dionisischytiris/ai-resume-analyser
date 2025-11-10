@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
-import {Link, useNavigate} from "react-router";
+import {useNavigate} from "react-router";
 import {usePuterStore} from "~/lib/puter";
+import Navbar from "~/components/Navbar";
 
 const WipeApp = () => {
     const {auth, isLoading, error, clearError, fs, ai, kv} = usePuterStore();
@@ -40,31 +41,29 @@ const WipeApp = () => {
 
     return (
         <main>
-            <nav className="resume-nav">
-                <Link to="/" className="back-button">
-                    <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5"/>
-                    <span className="text-gray-800 text-sm font-semibold">Back to Homepage</span>
-                </Link>
-            </nav>
-            <div>
-                Authenticated as: {auth.user?.username}
-                <div>Existing files:</div>
-                <div className="flex flex-col gap-4">
-                    {files.map((file) => (
-                        <div key={file.id} className="flex flex-row gap-4">
-                            <p>{file.name}</p>
-                        </div>
-                    ))}
+            <Navbar/>
+
+            <section className="main-section">
+                <div className="page-heading">
+                    <h2> Authenticated as: {auth.user?.username}</h2>
+                    <div>Existing files:</div>
+                    <div className="flex flex-col gap-4">
+                        {files.map((file) => (
+                            <div key={file.id} className="flex flex-row gap-4">
+                                <p>{file.name}</p>
+                            </div>
+                        ))}
+                    </div>
+                    <div>
+                        <button
+                            className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
+                            onClick={() => handleDelete()}
+                        >
+                            Wipe App Data
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    <button
-                        className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
-                        onClick={() => handleDelete()}
-                    >
-                        Wipe App Data
-                    </button>
-                </div>
-            </div>
+            </section>
         </main>
     );
 };
