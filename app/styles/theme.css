@@ -27,6 +27,8 @@
     --resume-card: #ffffff;
     --text: #24292f;
     --text-muted: #6e7781;
+    --bg-input: #ffffff;
+    --text-input: #6e7781;
     --border: #d0d7de;
     --link: #0969da;
     --link-hover: #035fc7;
@@ -47,6 +49,8 @@
     --resume-card: #2d343e;
     --text: #c9d1d9;
     --text-muted: #8b949e;
+    --bg-input: #cccecc;
+    --text-input: black;
     --border: #30363d;
     --link: #58a6ff;
     --link-hover: #1f6feb;

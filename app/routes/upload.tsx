@@ -95,12 +95,12 @@ const Upload = () => {
     }
 
     return (
-        <main className="bg-[#1F6FEB] bg-cover">
+        <main>
             {/*<main className="bg-[url('/images/bg-main.svg')] bg-cover">*/}
             <Navbar/>
             <section className='main-section'>
-                <div className="page-heading py-16">
-                    <h1>Smart feedback for your dream job</h1>
+                <div className="">
+                    <h1 className='page-heading'>Smart feedback for your dream job</h1>
                     {isProcessing ? (
                         <>
                             <h2>{statusText}</h2>
@@ -110,9 +110,10 @@ const Upload = () => {
                         <h2>Drop your resume for an ATS score and improvement tips</h2>
                     )}
                     {!isProcessing && (
-                        <form id="upload-form" onSubmit={handleSubmit} className="flex flex-col gap-4 mt-8">
+                        <form id="upload-form" onSubmit={handleSubmit} className="flex flex-col gap-4 mt-18">
                             <div className="form-div">
-                                <label htmlFor="company-name">Company Name</label>
+                                <label htmlFor="company-name">Company
+                                    Name</label>
                                 <input type="text" name="company-name" placeholder="Company Name" id="company-name"/>
                             </div>
                             <div className="form-div">
@@ -130,7 +131,7 @@ const Upload = () => {
                                 <FileUploader onFileSelect={handleFileSelect}/>
                             </div>
 
-                            <button className="primary-button" type="submit">
+                            <button className="primary-button p-4 mb-10" type="submit">
                                 Analyze Resume
                             </button>
                         </form>

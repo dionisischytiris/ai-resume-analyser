@@ -51,7 +51,7 @@ const FileUploader = ({onFileSelect}: FileUploaderProps) => {
                             </button>
                         </div>
                     ) : (
-                        <div>
+                        <div className='flex flex-col items-center'>
                             <div className="mx-auto w-16 h-16 flex items-center justify-center mb-2">
                                 <img src="/icons/info.svg" alt="upload" className="size-20"/>
                             </div>

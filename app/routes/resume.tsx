@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {Link, useNavigate, useParams} from "react-router";
+import {useNavigate, useParams} from "react-router";
 import {usePuterStore} from "~/lib/puter";
 import Summary from "~/components/Summary";
 import Details from "~/components/Details";
 import ATS from "~/components/ATS";
+import Navbar from "~/components/Navbar";
 
 export const meta = () => ([
     {title: 'Resumind | Review '},
@@ -51,13 +52,8 @@ const Resume = () => {
 
 
     return (
-        <main className="!pt-0">
-            <nav className="resume-nav">
-                <Link to="/" className="back-button">
-                    <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5"/>
-                    <span className="text-gray-800 text-sm font-semibold">Back to Homepage</span>
-                </Link>
-            </nav>
+        <main className="!pt-0 mt-10">
+            <Navbar/>
             <div className="flex flex-row w-full max-lg:flex-col-reverse">
                 <section
                     className="feedback-section bg-[url('/images/bg-small.svg') bg-cover h-[100vh] sticky top-0 items-center justify-center">
@@ -75,7 +71,7 @@ const Resume = () => {
                     )}
                 </section>
                 <section className="feedback-section">
-                    <h2 className="text-4xl !text-black font-bold">Resume Review</h2>
+                    <h2>Resume Review</h2>
                     {feedback ? (
                         <div className="flex flex-col gap-8 animate-in fade-in duration-1000">
                             <Summary feedback={feedback}/>

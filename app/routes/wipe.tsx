@@ -51,17 +51,19 @@ const WipeApp = () => {
                         {files.map((file) => (
                             <div key={file.id} className="flex flex-row gap-4">
                                 <p>{file.name}</p>
+                                {/*<p>{file.id}</p>*/}
+
                             </div>
                         ))}
                     </div>
-                    <div>
-                        <button
-                            className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer"
-                            onClick={() => handleDelete()}
-                        >
-                            Wipe App Data
-                        </button>
-                    </div>
+                </div>
+                <div className="flex flex-col items-center justify-center mt-10 mb-10 gap-4">
+                    <button
+                        className="primary-button"
+                        onClick={() => handleDelete()}
+                    >
+                        Wipe All
+                    </button>
                 </div>
             </section>
         </main>
